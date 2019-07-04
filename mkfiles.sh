@@ -34,4 +34,4 @@ for i in $( seq 1 $((COUNT)) ); do
   echo -n "."
 done
 
-echo ""
+echo -n -e "\n"
