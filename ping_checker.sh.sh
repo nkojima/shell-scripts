@@ -8,8 +8,8 @@ LOG_FILE=./ping.log
 ​
 for ip in ${IP_LIST[@]}
 do
-  ping_result=`ping -w 5 $ip | grep '100% packet loss'`
-  date_result=`date`
+  ping_result=$(ping -w 5 $ip | grep '100% packet loss')
+  date_result=$(date)
 #  echo $ping_result
 ​
   if [[ -n $ping_result ]]; then
