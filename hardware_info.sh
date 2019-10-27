@@ -12,4 +12,4 @@ echo "[SCSI device]"
 echo $(cat /proc/scsi/scsi)
 
 echo "[PCI-E device]"
-echo $(lspci | grep SSD)
+echo "$(lspci | grep -iE "SSD|Non-Volatile memory")"
