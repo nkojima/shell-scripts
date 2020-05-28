@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/bash
 ​
 IP_LIST=(172.17.12.143 172.17.11.130 172.17.15.81 172.17.15.82)
 MAILTO='your_address@sample.com'
