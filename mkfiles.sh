@@ -30,7 +30,7 @@ do
 done
 
 for i in $( seq 1 $((COUNT)) ); do
-  dd if=/dev/zero of=${FILE_SIZE}_${i}.txt bs=$FILE_SIZE count=1 2> /dev/null
+  fallocate -l $FILE_SIZE ${FILE_SIZE}_${i}.txt
   echo -n "."
 done
 
