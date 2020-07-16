@@ -13,3 +13,7 @@ echo $(cat /proc/scsi/scsi)
 
 echo "[PCI-E device]"
 echo "$(lspci | grep -iE "SSD|Non-Volatile memory")"
+
+echo "[BIOS]"
+echo "vendor : $(dmidecode -t bios | grep "Vendor" | sed 's/\sVendor:\s//g')"
+echo "version : $(dmidecode -t bios | grep "Version" | sed 's/\sVersion:\s//g')"
