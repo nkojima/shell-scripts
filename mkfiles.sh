@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ファイルサイズとファイル数を指定して、高速にファイルを作成するスクリプト。
+
 function usage {
     cat <<EOS
 $(basename ${0}) is a file-creation tool for test.
