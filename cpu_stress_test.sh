@@ -11,7 +11,7 @@ Usage:
     $(basename ${0}) [<options>]
 
 Options:
-    -n    using n cores in stress test.
+    -n    using n cores in stress test. default is `grep processor /proc/cpuinfo | wc -l`.
 EOS
 }
 
