@@ -28,6 +28,5 @@ do
   esac
 done
 
-echo $CPU_THREADS
-
-openssl speed -multi $CPU_THREADS
+echo "using "$CPU_THREADS" cores in stress test."
+openssl speed -multi $CPU_THREADS > /dev/null 2>&1
