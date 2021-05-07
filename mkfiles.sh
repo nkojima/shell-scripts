@@ -34,6 +34,7 @@ do
   esac
 done
 
+# 処理高速化のため、ddコマンドを使わずにfallocateコマンドを使ってファイルを作成する。
 for i in $( seq 1 $((COUNT)) ); do
   fallocate -l $FILE_SIZE ${FILE_SIZE}_${i}.txt
   echo -n "."
