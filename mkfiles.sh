@@ -35,9 +35,16 @@ do
 done
 
 # 処理高速化のため、ddコマンドを使わずにfallocateコマンドを使ってファイルを作成する。
+# ファイル作成に時間がかかる可能性があるため、同一行に進行状況を表示する。
 for i in $( seq 1 $((COUNT)) ); do
   fallocate -l $FILE_SIZE ${FILE_SIZE}_${i}.txt
-  echo -n "."
+
+  # \cを付けて改行を抑制しつつ、進行状況を出力する。
+  echo -e "(${i}/${COUNT})\c"
+  # 同じ行の先頭にフォーカスを移す。
+  echo -e "\r\c"
 done
 
+# 1行改行してから完了メッセージを出力する。
 echo -n -e "\n"
+echo "complete!"
