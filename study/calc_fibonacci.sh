@@ -5,19 +5,25 @@
 
 result=0              # フィボナッチ数の計算結果
 p1_result=0           # 1つ前のフィボナッチ数の計算結果
+i=0                   # ループのカウンタ変数
 
-for ((i=0; i<=100; i++))
+while true
 do
   if [ $i -eq 0 ]; then
-    echo 0
+    result=0
   elif [ $i -eq 1 ]; then
     result=1
     p1_result=1
-    echo $result
   else
     p2_result=$p1_result  # 1つ前の計算結果を2つ前の計算結果に代入
     p1_result=$result     # 直前の計算結果を1つ前の計算結果に代入
     result=$(($p1_result+p2_result))
-    echo $result
   fi
+  
+  if [ $result -ge 100 ]; then
+    break
+  fi
+
+  echo $result
+  i=$((i + 1))  # bash組み込みのインクリメント演算子を利用
 done
