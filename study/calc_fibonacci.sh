@@ -20,10 +20,10 @@ do
     result=$(($p1_result+p2_result))
   fi
   
-  if [ $result -ge 100 ]; then
+  if [ $result -gt 100 ]; then  # 計算結果が100より大きい時は処理を抜ける。
     break
   fi
 
   echo $result
-  i=$((i + 1))  # bash組み込みのインクリメント演算子を利用
+  i=$((i + 1))
 done
